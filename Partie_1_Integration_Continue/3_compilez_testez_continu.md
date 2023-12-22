@@ -80,7 +80,11 @@ Chacun des blocs `jobs` contient trois sous-parties aux titres similaires :
 - `script` indique les commandes à lancer (le script) pour exécuter l'étape (ici de compilation ou de tests). Ici le script de build installe Maven et lance la compilation du projet (c'est ce qu'a surtout l'air de faire `./mvnw compile`, après le reste a surtout l'air des options pour faire tourner correctement le script);
 - `image` correspond à l'image Docker (parce que oui, GitLab utilise Docker et en a besoin pour avoir un environnement où exécuter les scripts ici).
 
-Si un seul test du script de `test` échoue, le pipeline s'arrête. Pour qu'ils s'exécutent au plus vite, on recommande qu'ils n'aient aucune dépendance vis-à-vis de systèmes externes (bdd, système de fichiers du serveur, etc).
+Si un seul test du script de `test` échoue, le pipeline s'arrête et envoie un e-mail au développeur concerné, pour lui dire que du caca est apparu. Pour qu'ils s'exécutent au plus vite, on recommande qu'ils n'aient aucune dépendance vis-à-vis de systèmes externes (bdd, système de fichiers du serveur, etc).
 
 Une fois que le fichier `.gitlab-ci.yml` a été commité, on peut voir le déroulement des deux stages définis ci-dessus dans la pipeline, sur [cette page](https://gitlab.com/Peterkolios/spring-petclinic-microservices/-/pipelines), ou `Build > Pipelines` dans le menu de gauche.
 En cliquant sur le "status" d'une pipeline, on voit plus de détails, notamment sur les jobs qui se lancent.
+Quand une CI a échoué et qu'on clique sur les détails dans la pipeline pour voir les logs techniques, on a un bouton en haut à droite pour créer une issue à ce sujet si besoin.
+
+Pour résoudre le problème, on peut passer par une Merge Request, et tout ça je connais déjà donc je ne reviens pas dessus.
+Enfin c'est quand même important de savoir que si la description de la MR est de la forme `Closes #3` (ou numéro de ticket correspondant qui a été créé lors du fail de pipeline), le ticket associé est automatiquement fermé après MEP de la MR.
