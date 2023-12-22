@@ -13,4 +13,4 @@ Pour bien comprendre une CI/CD, certaines notions de gestion de projet informati
 - On rappelle qu'une user story n'est prête que si elle a été bien écrite et contient tous les éléments nécessaires à son développement durant le sprint. On appelle le fait de définir la définition d'une user story prête, une **Definition of Ready** (oui on donne vraiment des anglicismes à tout et n'importe quoi...).
 - Un **milestone** GitLab représente en gros un sprint.
 - On appelle **burndown chart** la liste des issues du sprint en cours.
-- On peut ajouter un traçage du temps passé sur tel ticket dans GitLab. Sur la page encore expérimentale des [time tracking reports](https://gitlab.com/-/timelogs), on peut voir le temps passé pour chaque utilisateur sur les différents tickets.
+- On peut ajouter un traçage du temps passé sur tel ticket dans GitLab, en mettant dans le commentaire `/spend 8h` quand on a passé 8h dessus par exemple. Sur la page encore expérimentale des [time tracking reports](https://gitlab.com/-/timelogs), on peut voir le temps passé pour chaque utilisateur sur les différents tickets.
