@@ -81,3 +81,6 @@ Chacun des blocs `jobs` contient trois sous-parties aux titres similaires :
 - `image` correspond à l'image Docker (parce que oui, GitLab utilise Docker et en a besoin pour avoir un environnement où exécuter les scripts ici).
 
 Si un seul test du script de `test` échoue, le pipeline s'arrête. Pour qu'ils s'exécutent au plus vite, on recommande qu'ils n'aient aucune dépendance vis-à-vis de systèmes externes (bdd, système de fichiers du serveur, etc).
+
+Une fois que le fichier `.gitlab-ci.yml` a été commité, on peut voir le déroulement des deux stages définis ci-dessus dans la pipeline, sur [cette page](https://gitlab.com/Peterkolios/spring-petclinic-microservices/-/pipelines), ou `Build > Pipelines` dans le menu de gauche.
+En cliquant sur le "status" d'une pipeline, on voit plus de détails, notamment sur les jobs qui se lancent.
