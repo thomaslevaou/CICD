@@ -8,4 +8,7 @@ En production, on utilise généralement des plates-formes d'orchestration de co
 Les Dockerfiles sont déjà dispos dans le dossier `docker` de `string-petclinic-services`.
 
 Si je modifie le numéro de version dans le Dockerfile, je peux pousser sans souci. Ce qui changera l'image créée sur le registry Gitlab.
-Je peux alors récupérer le nom de l'image dessus, et le modifier dans le fichier `docker-compose.yml`. Ce qui permet à ce fichier d'IaC d'être lancé par les pipelines de livraison continue.
+
+La liste de mon registry de conteneurs GitLab est censée être disponible ici : <https://gitlab.com/Peterkolios/spring-petclinic-microservices/container_registry>.
+
+Je peux alors modifier dans le fichier `docker-compose.yml` les `springcommunity/` par des `registry.gitlab.com/Peterkolios/` ici. Ce qui devrait permettre à ce fichier d'IaC d'être lancé par les pipelines de livraison continue. Mais j'ai franchement du mal à comprendre si c'est GitLab qui est censé créer ces images tout seul, ou si je dois faire une action en avant qui n'est pas précisée.
