@@ -10,11 +10,12 @@ En tout cas dans le workflow GitFlow, l'intégration continue est surtout utile 
 
 Sur GitLab, si notre compte se connecte à une 2FA, alors pour que je puisse accéder à un dépôt en fenêtre de commande, je dois créer un **Personal Access Token** (PAT) relié à l'API Git. Le PAT m'identifie sur GitLab : si quelqu'un y a accès en dehors de moi, il peut hacker mon compte sans trop de problème.
 
-Notons que pour faciliter la pédagogie ici, on a cloné un projet GitLab vide (créé sur mon profil GitLab), et on a dedans ajouté un dépôt distant de GItHub. Et oui, c'est possible avec les commandes suivantes :
+Notons que pour faciliter la pédagogie ici, on a cloné un projet GitLab vide (créé sur mon profil GitLab), et on a dedans ajouté un dépôt distant de GitHub. Et oui, c'est possible avec les commandes suivantes :
 
 ```bash
 # "upstream" doit sûrement dire quelque chose comme "je veux ajouter un remote mais le terme origin est déjà pris" je pense
 # Je ne creuse pas plus pour gagner du temps
+# Attention dans cette situation on doit bien prendre l'URL en HTTPS, pas l'URL en SSH
 git remote add upstream https://github.com/spring-petclinic/spring-petclinic-microservices.git
 git pull upstream master
 
